@@ -1,9 +1,9 @@
 import ExperienceItem from "./TextBlock";
-import CountUp from "./CountUp";
+import CountUp from "./molecules/CountUp";
 import { RoughNotation } from 'react-rough-notation';
 const MyResumeSection = () => {
   return (
-    <section className="w-full overflow-hidden px-4 py-8 mb-4">
+    <section id ="work" className="w-full overflow-hidden px-4 py-8 mb-4">
       <h2 className="text-2xl font-bold mb-5">Work</h2>
       <ExperienceItem
         timeframe="January 2025"
@@ -19,8 +19,7 @@ const MyResumeSection = () => {
             direction="up"
             duration={2}
             className="count-up-text"
-          /> </span>  Mongolian
-        herders.
+          /></span>Mongolian herders.
       </li>
       <li>
         Processed <RoughNotation

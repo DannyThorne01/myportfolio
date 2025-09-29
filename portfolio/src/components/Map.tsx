@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Map } from 'react-map-gl/maplibre';
 import { ScatterplotLayer, GeoJsonLayer } from 'deck.gl';
 import { MapboxOverlay } from '@deck.gl/mapbox';
-import Crosshair from './Crosshair';
+import Crosshair from './molecules/Crosshair';
 const MAP_STYLE =
   'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
@@ -16,7 +16,6 @@ const INITIAL_VIEW_STATE = {
   bearing: 0
 } as const;
 
-/* ── city & state data ─────────────────────────────────────────────────── */
 type City = { name: string; lon: number; lat: number; state: string };
 
 const CITIES: City[] = [
@@ -28,6 +27,7 @@ const CITIES: City[] = [
   { name: 'San Diego',     lon: -117.1611, lat: 32.7157, state: 'California' }
 ];
 
+
 const TARGET_STATES = [
   'California',
   'New York',
@@ -36,7 +36,24 @@ const TARGET_STATES = [
   'Illinois'
 ] as const;
 
-/* lonMin, latMin, lonMax, latMax */
+const TARGET_CITIES = [
+  'San Diego',
+  'San Francisco',
+  'Ithaca',
+  'Dallas',
+  'Chicago',
+  'Boston'
+] as const 
+
+const CITY_BBOX: Record<typeof TARGET_CITIES[number], [number, number, number, number]> = {
+  Ithaca:        [-76.92, 42.06, -76.08, 42.82],
+  Boston:        [-71.65, 41.92, -70.47, 42.80],
+  Dallas:        [-97.40, 32.40, -96.19, 33.15],
+  Chicago:       [-88.36, 41.47, -86.90, 42.29],
+  'San Francisco':[-122.93, 37.22, -121.91, 38.32],
+  'San Diego':   [-117.67, 32.38, -116.65, 33.05],
+};
+
 const STATE_BBOX: Record<typeof TARGET_STATES[number], [number, number, number, number]> = {
   California:     [-124.48, 32.53, -114.13, 42.01],
   'New York':     [-79.76,  40.50, -71.85, 45.01],
@@ -44,12 +61,21 @@ const STATE_BBOX: Record<typeof TARGET_STATES[number], [number, number, number, 
   Texas:          [-106.65, 25.84, -93.51,  36.50],
   Illinois:       [-91.51,  36.98, -87.02,  42.51]
 };
+
+const DESC : Record<typeof TARGET_CITIES[number], string> = {
+  'San Diego': "Met some Great People here at the ESRI User Conference! ",
+  'San Francisco': "A nerve-wrecking but fulfilling First Internship at Google Vertex AI.",
+  Ithaca: "School here was something completely mesmerizing.",
+  Boston:  "Unforgettable Internship at MIT Lincoln Lab, working with great minds",
+  Dallas:  "My very first conference, and my first suit in a long time!",
+  Chicago:  "NSBE Nationals Conference where I took a chace at my networking skills."     
+}
 interface UsMapDeckProps {
-  onStateSelect: (state: string | null) => void;
+  onCitySelect: (city: string | null) => void;
 }
 
 
-export default function UsMapDeck({ onStateSelect }: UsMapDeckProps) {
+export default function UsMapDeck({ onCitySelect }: UsMapDeckProps) {
   const mapRef = useRef<maplibregl.Map | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
@@ -57,7 +83,6 @@ export default function UsMapDeck({ onStateSelect }: UsMapDeckProps) {
   const [hoveredCity, setHoveredCity] = useState<City | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  /* fetch GeoJSON once */
   useEffect(() => {
     fetch('https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson')
       .then((r) => r.json())
@@ -83,7 +108,6 @@ const stateLayer = useMemo(() => {
     stroked: true,
     filled: true,
     getFillColor: [255, 255, 255, 50],
-    // getLineColor: [163, 230, 53, 200],
     lineWidthMinPixels: 1,
   });
 }, [usStates]);
@@ -104,10 +128,10 @@ const stateLayer = useMemo(() => {
         getLineWidth: (d) =>
           hoveredCity && hoveredCity.name === d.name ? 8 : 0,
         updateTriggers: { getLineWidth: [hoveredCity] },
-        onHover: ({ object }) => setHoveredCity((object as City) || null),
+        // onHover: ({ object }) => setHoveredCity((object as City) || null),
         onClick: ({ object }) => {
           const city = object as City;
-          const box = STATE_BBOX[city.state as keyof typeof STATE_BBOX];
+          const box = CITY_BBOX[city.name as keyof typeof CITY_BBOX];
           if (!box || !mapRef.current) return;
 
           mapRef.current.fitBounds(
@@ -115,18 +139,15 @@ const stateLayer = useMemo(() => {
               [box[0], box[1]],
               [box[2], box[3]]
             ],
-            { padding: 40, duration: 800 }
+            { padding: 100, duration: 1500, easing: (t) => t * (2 - t)  }
           );
           setSelectedState(city.state);
-          onStateSelect(city.state);
+          setHoveredCity(city)
+          onCitySelect(city.name);
         }
       }),
-    [hoveredCity, onStateSelect]
+    [ onCitySelect]
   );
-
-
-
- 
 
 
   const handleLoad = (e: { target: maplibregl.Map }) => {
@@ -154,12 +175,13 @@ const stateLayer = useMemo(() => {
         mapStyle={MAP_STYLE}
         initialViewState={INITIAL_VIEW_STATE}
         onLoad={handleLoad}
-        interactive= {false}
+        interactive= {true}
         style={{ width: '100%', height: '100%' }}
       />
 
 
       {selectedState && (
+        <>
         <button
           onClick={handleReset}
           className="absolute top-4 left-4 z-10
@@ -168,7 +190,16 @@ const stateLayer = useMemo(() => {
         >
           Back
         </button>
-        
+        <div
+          className="absolute top-[80%] left-1/2 z-10
+                  bg-black/20 text-white font-bold
+                  px-3 py-1 rounded-2xl shadow
+                  max-w-xs text-center"
+          style={{ transform: 'translate(-50%, -50%)' }}
+        >
+          <p>{DESC[hoveredCity?.name as keyof typeof DESC]}</p>
+        </div>
+        </>
       )}
        {isHovered && (
         <Crosshair

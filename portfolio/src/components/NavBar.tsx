@@ -1,17 +1,17 @@
 // src/components/NavBar.tsx
-import CircularText from "./CircularText";
-import GooeyNav from "./GooeyNav";
+import CircularText from "./molecules/CircularText";
+import GooeyNav from "./molecules/GooeyNav";
 
 const items = [
   { label: "Home", href: "#" },
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
 ];
 
 const NavBar = () => (
-  <header className="fixed inset-x-0 top-0 z-50 h-16 bg-black/90 backdrop-blur">
+  <header className="fixed inset-x-0 top-0 z-50 h-16 backdrop-blur">
     <div className="relative h-full flex items-center justify-center">
-      {/* gooey menu */}
       <GooeyNav
         items={items}
         particleCount={15}

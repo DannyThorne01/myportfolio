@@ -1,11 +1,11 @@
-import BlurText from "./BlurText";
-import TypewriterText from "./TypeWriter";
-import CircularText from "./CircularText";
-import GooeyNav from "./GooeyNav";
+import BlurText from "./molecules/BlurText";
+import TypewriterText from "./molecules/TypeWriter";
+import CircularText from "./molecules/CircularText";
+import GooeyNav from "./molecules/GooeyNav";
 
 const Intro = () => (
  
-    <div className="min-h-screen w-screen bg-black flex items-center">
+    <div className="min-h-screen w-screen flex items-center">
     
       <div className="pl-2 sm:pl-12">
         <BlurText

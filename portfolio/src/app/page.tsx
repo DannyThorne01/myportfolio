@@ -117,12 +117,12 @@ export default function Page() {
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-5"> 
       
 
-        <NavBar />
+
         <Intro />
-        <Experience />
         <ProjectsPage/>
         <MyResumeSection/>
-        <BlogPost/>
+        <Experience />
+        {/* <BlogPost/> */}
 
       </div>
     </main>

@@ -1,5 +1,5 @@
 // ProjectsPage.tsx
-import Carousel from "./Carousel";
+import Carousel from "./molecules/Carousel";
 
 const projects = [
   {
@@ -19,14 +19,14 @@ const projects = [
     name: "Tompkins Suitability Analysis",
     github: "https://github.com/your/pigeon",
     picture: "/tmp.png",
-    description: "A Suitability Analysis Project in ArcGIS Pro that determines best crop areas in Tompkins.",
-  },
+    description: "ArcGIS Project that determines best crop areas in Tompkins.",
+  }
 ];
 
 export default function ProjectsPage() {
   return (
-    <section className="w-full overflow-hidden px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Projects</h2>
+    <section id ="projects" className="w-full overflow-hidden px-4 py-8 mb-10">
+      <h2 className="text-2xl font-bold mb-10">Projects</h2>
       <Carousel projects={projects} />
     </section>
   );

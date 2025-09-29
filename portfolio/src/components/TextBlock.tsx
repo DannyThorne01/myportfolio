@@ -21,7 +21,6 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   tags,
 }) => (
   <div className="mb-8 px-5 flex flex-wrap lg:justify-center">
-    {/* Date / timeframe */}
     <div className="w-full lg:w-1/4">
       <p className="mb-2 text-sm text-neutral-400">{timeframe}</p>
     </div>
@@ -48,7 +47,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
       </h3>
 
       {/* Description */}
-      <p className="mb-4 text-neutral-400">{description}</p>
+      <div className="mb-4 text-neutral-400">{description}</div>
 
       {/* Tags */}
       <div className="flex flex-wrap mt-4">
