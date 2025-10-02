@@ -58,7 +58,7 @@ const MyResumeSection = () => {
         Automated end-to-end testing workflows using Python and Bash scripts, systematically evaluating three distinct strategies for monitoring data transmission and network resilience under simulated emergency conditions.
       </li>
       <li>
-        Utilized Jenkins to orchestrate CI/CD pipelines, reducing container deployment time by <span className="font-semibold text-lime-400/100 text-lg"> <CountUp
+        Utilized Jenkins to orchestrate CI_CD pipelines reducing container deployment time by <span className="font-semibold text-lime-400/100 text-lg"> <CountUp
             from={0}
             to={40}
             separator=","
@@ -88,7 +88,7 @@ const MyResumeSection = () => {
       > complexity </RoughNotation> of deployed ML models using TensorFlow and TensorBoard Visualiser.
       </li>
       <li>
-        Integrated profiling application as a feature in GCP's Vertex AI Online Prediction API allowing customers to deploy ML models with built-in performance profiling for efficient optimization.
+        Integrated profiling application as a feature in GCP Vertex AI Online Prediction API allowing customers to deploy ML models with built-in performance profiling for efficient optimization.
       </li>
       <li>
         Conducted rigorous end-to-end tests that achieved <span className="font-semibold text-lime-300"> <CountUp

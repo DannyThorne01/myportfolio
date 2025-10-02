@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image"
 
 export interface Project {
   name: string;
@@ -45,7 +46,7 @@ const Carousel: React.FC<CarouselProps> = ({ projects }) => {
           "
         >
           <div className="overflow-hidden rounded-xl mb-4">
-            <img
+            <Image
               src={project.picture}
               alt={project.name}
               className="w-full h-48 object-cover"

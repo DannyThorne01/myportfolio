@@ -80,7 +80,7 @@ const Crosshair: React.FC<CrosshairProps> = ({
       { opacity: 0 }
     );
 
-    const onMouseMove = (_ev: Event) => {
+    const onMouseMove = () => {
       renderedStyles.tx.previous = renderedStyles.tx.current = mouse.x;
       renderedStyles.ty.previous = renderedStyles.ty.current = mouse.y;
 

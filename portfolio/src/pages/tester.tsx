@@ -1,7 +1,4 @@
 
-import Intro from "../components/Intro"
-import Journey from "../components/Blog";
-import NavBar from "@/components/NavBar";
 import BlogPost from "@/components/Blog";
 
 const Test =() =>{

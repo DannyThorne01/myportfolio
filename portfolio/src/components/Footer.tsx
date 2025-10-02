@@ -6,7 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import LanguageIcon from "@mui/icons-material/Language";
+
 
 const Footer: React.FC = () => {
   return (

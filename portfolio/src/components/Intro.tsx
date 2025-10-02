@@ -1,7 +1,6 @@
 import BlurText from "./molecules/BlurText";
 import TypewriterText from "./molecules/TypeWriter";
-import CircularText from "./molecules/CircularText";
-import GooeyNav from "./molecules/GooeyNav";
+
 
 const Intro = () => (
  
