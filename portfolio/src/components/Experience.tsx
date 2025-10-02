@@ -54,7 +54,7 @@ console.log(selectedCity)
       <UsMapDeck onCitySelect={setSelectedCity}/>
     </div> 
     <aside className="hidden md:block h-[60vh] md:h-[70vh] bg-neutral-900 rounded-xl shadow-lg p-4 overflow-auto">
-      <Masonry items={items} columns={3} gap={16}/>
+      <Masonry items={items} columns={2} gap={16}/>
 
     </aside>
   </div>      

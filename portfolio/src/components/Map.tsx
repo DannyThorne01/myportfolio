@@ -139,7 +139,7 @@ const stateLayer = useMemo(() => {
               [box[0], box[1]],
               [box[2], box[3]]
             ],
-            { padding: 100, duration: 1500, easing: (t) => t * (2 - t)  }
+            { padding: 200, duration: 1500, easing: (t) => t * (2 - t)  }
           );
           setSelectedState(city.state);
           setHoveredCity(city)

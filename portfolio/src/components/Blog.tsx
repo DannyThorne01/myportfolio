@@ -37,8 +37,8 @@ const LulcSummaryTable = () => (
  * Blog post layout – dark mode: black bg, white text.
  */
 const BlogPost = () => (
-  <article className="mx-auto max-w-4xl space-y-12 px-4 pb-16 bg-black text-white">
-    {/* Hero */}
+  <article className="mx-auto max-w-4xl space-y-12 px-4 pb-16 text-white">
+
     <section className="border-b border-white/20 pb-8">
       <h1 className="text-4xl font-extrabold leading-tight tracking-tight">
         Suitability Assessment for Agro‑Ecological Zones
@@ -75,11 +75,11 @@ const BlogPost = () => (
       <SoilReclassTable />
       <figure className="pt-4">
         <Image
-          src="/soil.png"
+          src="/soil1.png"
           alt="Tompkins County soil‑drainage suitability map"
           width={200}
           height={200}
-          className="h-auto w-full rounded-lg border "
+          className="h-auto w-full rounded-lg "
         />
         <figcaption className="mt-2 text-sm text-white/70">
           Soil‑drainage suitability: <span className="font-semibold">Light blue</span> = Class 1 (poor to moderate); <span className="font-semibold">Dark blue</span> = Class 2 (well‑drained).
@@ -108,17 +108,17 @@ const BlogPost = () => (
       <LulcSummaryTable />
       <figure className="pt-4">
         <Image
-          src="/lulc_arc.png"
+          src="/i1.png"
           alt="Land‑use / land‑cover map for Tompkins County"
           width={700}
           height={500}
-          className=" h-auto w-full rounded-lg border "
+          className=" h-auto w-full rounded-lg  "
         />
         <figcaption className="mt-2 text-sm text-white/70">Land‑use / land‑cover distribution across Tompkins County (NLCD 2019).</figcaption>
       </figure>
     </section>
 
-    {/* GDD Section */}
+  
     <section id="gdd" className="space-y-6">
       <h2 className="text-2xl font-semibold">Growing Degree Days (GDD)</h2>
       <p className="leading-relaxed">
@@ -204,7 +204,7 @@ const BlogPost = () => (
     buffered UNAs act as exclusion zones in the biosuitability model.
   </p>
 
-  {/* UNA map */}
+
   <figure className="pt-4">
     <Image
       src="/una.png"      /* ← replace with your file path */
@@ -240,14 +240,14 @@ AEZ = 4  if  (GDD_class = 2) & (SD_class = 2)`}
     (warm + well-drained), streamlining downstream cost-benefit and zoning analyses.
   </p>
 
-  {/* AEZ map */}
+
   <figure className="pt-4">
     <Image
-      src="/aez.png"      /* ← replace with your file path */
+      src="/aez1.png"      /* ← replace with your file path */
       alt="Tompkins County Agro-Ecological Zones"
       width={768}
       height={550}
-      className="h-auto w-full rounded-lg border border-white/20"
+      className="h-auto w-full rounded-lg"
     />
     <figcaption className="mt-2 text-sm text-white/70">
       AEZ classes: 1 = cool / poor drainage, 4 = warm / well-drained (highest suitability).
@@ -286,11 +286,11 @@ AEZ = 4  if  (GDD_class = 2) & (SD_class = 2)`}
   {/* Biosuitability map */}
   <figure className="pt-4">
     <Image
-      src="/biosuit.png"   /* ← replace with your file path */
+      src="/biosuit1.png"   /* ← replace with your file path */
       alt="Biosuitability map for Tompkins County"
       width={768}
       height={550}
-      className="h-auto w-full rounded-lg border border-white/20"
+      className="h-auto w-full rounded-lg "
     />
     <figcaption className="mt-2 text-sm text-white/70">
       Biosuitable pixels (highlighted) satisfy land-cover, slope, and conservation-setback criteria.
@@ -325,11 +325,11 @@ AEZ = 4  if  (GDD_class = 2) & (SD_class = 2)`}
   {/* Final suitability map */}
   <figure className="pt-4">
     <Image
-      src="/suitability.png"  
+      src="/suit1.png"  
       alt="Composite suitability map for Tompkins County"
       width={768}
       height={550}
-      className="h-auto w-full rounded-lg border border-white/20"
+      className="h-auto w-full rounded-lg "
     />
     <figcaption className="mt-2 text-sm text-white/70">
       Composite suitability (0 = masked; 1–4 = increasing agricultural potential within ecologically viable areas).

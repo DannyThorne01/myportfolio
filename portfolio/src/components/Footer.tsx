@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
         {/* Left side */}
         <Box textAlign={{ xs: "center", sm: "left" }}>
           <Typography variant="h6" sx={{ color: "white", fontWeight: 600 }}>
-            Let’s Connect 🚀
+            Let’s Connect 
           </Typography>
           <Typography variant="body2" sx={{ color: "neutral.500" }}>
             Always open to collaborations, projects, and coffee chats.
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           flexWrap="wrap"
         >
           <Link
-            href="https://github.com/your-username"
+            href="https://github.com/DannyThorne01"
             target="_blank"
             rel="noreferrer"
             underline="hover"
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             <GitHubIcon fontSize="small" /> GitHub
           </Link>
           <Link
-            href="https://linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/thorne-daniel/"
             target="_blank"
             rel="noreferrer"
             underline="hover"
@@ -66,20 +66,20 @@ const Footer: React.FC = () => {
             <LinkedInIcon fontSize="small" /> LinkedIn
           </Link>
           <Link
-            href="mailto:youremail@example.com"
+            href="mailto:danielbaldeothorne@gmail.com"
             underline="hover"
             sx={{ display: "flex", alignItems: "center", gap: 1, color: "inherit", "&:hover": { color: "white" } }}
           >
             <EmailIcon fontSize="small" /> Email
           </Link>
           <Link
-            href="tel:+1234567890"
+            href="tel:+6313041562"
             underline="hover"
             sx={{ display: "flex", alignItems: "center", gap: 1, color: "inherit", "&:hover": { color: "white" } }}
           >
             <PhoneIcon fontSize="small" /> Call
           </Link>
-          <Link
+          {/* <Link
             href="https://your-portfolio-link.com"
             target="_blank"
             rel="noreferrer"
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
             sx={{ display: "flex", alignItems: "center", gap: 1, color: "inherit", "&:hover": { color: "white" } }}
           >
             <LanguageIcon fontSize="small" /> Portfolio
-          </Link>
+          </Link> */}
         </Stack>
       </Container>
 
@@ -96,9 +96,9 @@ const Footer: React.FC = () => {
         variant="caption"
         display="block"
         align="center"
-        sx={{ mt: 3, color: "neutral.600" }}
+        sx={{ mt: 8, color: "neutral.600" }}
       >
-        © {new Date().getFullYear()} Your Name · Built with Next.js & MUI · Made with ❤️
+        © {new Date().getFullYear()} Daniel Baldeo-Thorne · Built with Next.js & MUI · Made with Ungodly amounts of Jolly Ranchers
       </Typography>
     </Box>
   );

@@ -17,7 +17,7 @@ const projects = [
   },
   {
     name: "Tompkins Suitability Analysis",
-    github: "https://github.com/your/pigeon",
+    website: "/blog/tompkins_county",
     picture: "/tmp.png",
     description: "ArcGIS Project that determines best crop areas in Tompkins.",
   }

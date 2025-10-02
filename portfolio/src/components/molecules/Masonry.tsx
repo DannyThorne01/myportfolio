@@ -17,8 +17,8 @@ interface MasonryProps {
 
 const Masonry: React.FC<MasonryProps> = ({
   items,
-  columns = 3,
-  gap = 16,
+  columns = 2,
+  gap = 20,
 }) => {
   return (
     <div

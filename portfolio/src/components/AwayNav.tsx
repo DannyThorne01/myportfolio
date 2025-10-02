@@ -4,9 +4,6 @@ import GooeyNav from "./molecules/GooeyNav";
 
 const items = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Work", href: "/#work" },
-  { label: "About", href: "/#about" },
 ];
 
 const NavBar = () => (

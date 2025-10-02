@@ -122,7 +122,6 @@ export default function Page() {
         <ProjectsPage/>
         <MyResumeSection/>
         <Experience />
-        {/* <BlogPost/> */}
 
       </div>
     </main>
