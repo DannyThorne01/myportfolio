@@ -74,7 +74,8 @@ console.log(selectedCity)
   return (
    <section id ="about" className="px-4 sm:px-8 py-8">  
    <h2 className="text-2xl font-bold mb-5">Beyond School</h2>
-   <p className="text-xl mb-5"> A mapped guide describing my life over the past four years!</p>
+   <p className="text-xl mb-5"> A mapped guide describing my life over the past four years! </p> 
+   <p className="text-lime-400/70 font-bold mb-5" > Click on any point to see more.</p>
   <div className="grid gap-6 grid-cols-1 md:grid-cols-[3fr_2fr]">
     <div className="h-[50vh] md:h-[70vh] overflow-hidden rounded-xl shadow-lg">
       <UsMapDeck onCitySelect={setSelectedCity}/>

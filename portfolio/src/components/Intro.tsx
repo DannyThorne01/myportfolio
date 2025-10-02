@@ -15,7 +15,7 @@ const Intro = () => (
           className="text-white text-3xl sm:text-5xl font-bold"
         />
          <TypewriterText
-          text="I build software and hardware that pushes the boundaries of Agri-Tech"
+          text="I build software and hardware that pushes the boundaries of Climate and Agri-Tech"
           className="text-lime-300 text-lg sm:text-xl mt-4"
         />
         

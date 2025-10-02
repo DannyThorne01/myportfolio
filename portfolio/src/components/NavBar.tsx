@@ -11,7 +11,7 @@ const items = [
 
 const NavBar = () => (
   <header className="fixed inset-x-0 top-0 z-50 h-16 backdrop-blur">
-    <div className="relative h-full flex items-center justify-center">
+    <div className="relative h-full flex items-center justify-center ">
       <GooeyNav
         items={items}
         particleCount={15}
@@ -23,7 +23,7 @@ const NavBar = () => (
         colors={[1, 2, 3, 1, 2, 3, 1, 4]}
       />
 
-      <div className="absolute left-4 top-1/2 -translate-y-1/2">
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:block">
         <CircularText
           text="FAITH + HOPE + DRIVE + "
           onHover="speedUp"
