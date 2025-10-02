@@ -5,14 +5,14 @@ const projects = [
   {
     name: "CHOMPY",
     github: "https://github.com/DannyThorne01/Chompyy",
-    picture: "./chompy.png",
+    picture: "/chompy.png",
     description:
       "Therapeutic Bot that helps relieve stress through chomping on emotional notes",
   },
   {
     name: "LULC Project",
     website: "https://lulc-analysis.vercel.app/",
-    picture: "./lulc.png",
+    picture: "/lulc.png",
     description: "A way to view time series data of Land Use Land Cover Change of the World",
   },
   {

@@ -49,6 +49,8 @@ const Carousel: React.FC<CarouselProps> = ({ projects }) => {
             <Image
               src={project.picture}
               alt={project.name}
+              width={500}   
+              height={300}  
               className="w-full h-48 object-cover"
             />
           </div>
@@ -58,7 +60,7 @@ const Carousel: React.FC<CarouselProps> = ({ projects }) => {
           <p className="text-sm text-neutral-400 mb-3 break-words">
             {project.description}
           </p>
-          <div className="flex gap-2 text-sm flex-wrap">
+          <div className="flex gap-2 text-sm flex-wrap font-semibold">
             {project.website && (
               <a
                 href={project.website}
